@@ -2,7 +2,7 @@ name: Deploy the project to AWS
 
 on:
   workflow_run:
-    workflows: ["CI_on_pull_trigger"]
+    workflows: ["CI_On_Pull_Trigger"]
     types: [completed]
     branches:
       - main
@@ -33,7 +33,7 @@ jobs:
         with:
           task-definition: .aws/task-definition.json
           container-name: api_app
-          image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPO }}:${{ github.sha }}
+          image: ${{  secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPO }}:${{ github.sha }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
