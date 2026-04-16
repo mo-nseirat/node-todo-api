@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // 4. تعريف المنفذ (هذا السطر سيحل مشكلة 'PORT' is not defined)
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 let todos = [];
 let nextId = 1;
