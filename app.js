@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // 3. إضافة Middleware لقراءة بيانات الـ JSON (ضروري ليعمل req.body)
-app.use(express.json());
+ app.use(express.json());
 
 // 4. تعريف المنفذ (هذا السطر سيحل مشكلة 'PORT' is not defined)
  const PORT = process.env.PORT || 80;
